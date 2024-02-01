@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MyProject.Controllers;
@@ -7,36 +6,41 @@ namespace MyProject.Controllers;
 public class Calculator : ControllerBase
 {
     [HttpGet("Add")]
-    public ActionResult<decimal> Add(decimal number1, decimal number2)
+    public ActionResult<decimal> Add(decimal x, decimal y)
     {
-        return number1 + number2;
+        var result = x + y;
+        return result;
     }
     [HttpGet("Subtract")]
-    public ActionResult<decimal> Subtract(decimal number1, decimal number2)
+    public ActionResult<decimal> Subtract(decimal x, decimal y)
     {
-        return number1 - number2;
+       var result = x - y;
+        return result;
     }
     [HttpGet("Multiply")]
-    public ActionResult<decimal> Multiply(decimal number1, decimal number2)
+    public ActionResult<decimal> Multiply(decimal x, decimal y)
     {
-        return number1 * number2;
+        var result = x + y;
+        return result;
     }
     [HttpGet("Divide")]
-    public ActionResult<decimal> Divide(decimal number1, decimal number2)
+    public ActionResult<decimal> Divide(decimal x, decimal y)
     {
-        if(number2==0)
+        if(y==0)
         {
-            return BadRequest("Can't divided by zero");
+            return BadRequest("Unable to process division by zero");
         }
-        return number1 / number2;
+        var result = x / y;
+        return result;
     }
     [HttpGet("Modulo")]
-    public ActionResult<decimal> Modulo(decimal number1, decimal number2)
+    public ActionResult<decimal> Modulo(decimal x, decimal y)
     {
-        if(number2==0)
+        if(y==0)
         {
-            return BadRequest("Can't find out modulo");
+            return BadRequest("Unable to process modulo operation");
         }
-        return number1 % number2;
+        var result = x % y;
+        return result;
     }
 }
