@@ -1,1 +1,1 @@
-# calculator-api
+This was an assignment to create a basic calculator application. The main function of this application was to perform basic arithmetic operations like addition, subtraction, multiplication and division. It would satrt by accessing the two inputs and the operation to perform those inputs and finally output the answer.
